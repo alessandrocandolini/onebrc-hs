@@ -1,3 +1,5 @@
+[![Compile and run tests](https://github.com/alessandrocandolini/onebrc-hs/actions/workflows/ci.yml/badge.svg)](https://github.com/alessandrocandolini/onebrc-hs/actions/workflows/ci.yml)
+
 # onebrc-hs
 
 ## How to build and run locally
