@@ -1,0 +1,68 @@
+name:                onebrc-hs
+version:             0.1.0.0
+description:         "onebrc-hs"
+
+dependencies:
+- base >= 4.7 && < 5
+- text
+- containers
+- nonempty-containers
+- async
+- stm
+- uuid
+- optparse-applicative
+- aeson
+- aeson-pretty
+- safe
+- either
+- megaparsec
+- witherable
+- ansi-terminal
+- envparse
+- neat-interpolation
+
+default-extensions:
+- OverloadedStrings
+
+ghc-options:
+  - -Wall
+  - -fmax-uncovered-patterns=99
+  - -Werror=incomplete-patterns
+  - -Werror=incomplete-uni-patterns
+  - -Wincomplete-record-updates
+  - -Wredundant-constraints
+  - -Wunused-packages
+  - -O2
+
+library:
+  source-dirs: src
+
+executables:
+  onebrc-hs:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - onebrc-hs
+
+tests:
+  onebrc-hs-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    - -O0 # No optimization for faster test runs
+    dependencies:
+    - onebrc-hs
+    - hspec
+    - QuickCheck
+    build-tools:
+    - hspec-discover
+
+verbatim:
+  cabal-version: 3.0

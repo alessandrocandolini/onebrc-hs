@@ -1,0 +1,14 @@
+cradle:
+  stack:
+    componentsToLoad:
+      - "onebrc-hs:lib"
+      - "onebrc-hs:test:onebrc-hs-test"
+    components:
+      - path: "./src"
+        component: "onebrc-hs:lib"
+
+      - path: "./app/Main.hs"
+        component: "onebrc-hs:exe:onebrc-hs"
+
+      - path: "./test"
+        component: "onebrc-hs:test:onebrc-hs-test"
